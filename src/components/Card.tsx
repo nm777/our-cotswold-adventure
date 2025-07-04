@@ -1,9 +1,26 @@
-import type { PropsWithChildren } from "react"
+import type { ComponentProps, PropsWithChildren } from "react";
+import { Link } from '@tanstack/react-router';
 
-const Card = ({ children }: PropsWithChildren) => (
-    <div className="card">
-        {children}
-    </div>
-)
+interface CardProps {
+    to?: ComponentProps<typeof Link>['to'];
+}
 
-export default Card
+const Card = ({ to, children }: PropsWithChildren<CardProps>) => {
+    if (to) {
+        return (
+            <Link to={to}>
+                <div className="card">
+                    {children}
+                </div>
+            </Link>
+        );
+    }
+
+    return (
+        <div className="card">
+            {children}
+        </div>
+    );
+};
+
+export default Card;
