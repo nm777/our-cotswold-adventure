@@ -9,20 +9,16 @@ export const Route = createFileRoute('/')({
 function Index() {
   return (
     <>
+      <div className="home-background"></div>
       <h1>Our Cotswold Adventure</h1>
-      <div>
-        <div>
-          <Link to="/prep">
-            <Card>
-              <CardTitle>Preparation</CardTitle>
-            </Card>
-          </Link>
-          <Link to="/journey">
-            <Card>
-              <CardTitle>The Journey</CardTitle>
-            </Card>
-          </Link>
-        </div>
+      <div className='card-container'>
+        <Card to="/prep">
+          <CardTitle>Preparation</CardTitle>
+        </Card>
+        <Card>
+          <CardTitle>The Journey</CardTitle>
+          Coming in September
+        </Card>
       </div>
     </>
   )

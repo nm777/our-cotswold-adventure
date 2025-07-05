@@ -1,18 +1,18 @@
 import type { ComponentProps, PropsWithChildren } from "react";
-import { Link } from '@tanstack/react-router';
+import { Link, useNavigate } from '@tanstack/react-router';
 
 interface CardProps {
     to?: ComponentProps<typeof Link>['to'];
 }
 
 const Card = ({ to, children }: PropsWithChildren<CardProps>) => {
+    const navigate = useNavigate()
+
     if (to) {
         return (
-            <Link to={to}>
-                <div className="card">
-                    {children}
-                </div>
-            </Link>
+            <div className="card" onClick={() => navigate({ to })}>
+                {children}
+            </div>
         );
     }
 

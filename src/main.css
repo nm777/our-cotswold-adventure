@@ -27,6 +27,7 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
@@ -83,24 +84,54 @@ button:focus-visible {
 
 h1 {
   font-family: 'Carattere', handwriting;
+  font-size: 5em;
+  color: navy;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .card {
-  border: 1px solid black;
+  border: 1px solid navy;
   border-radius: 5px;
+  color: navy;
+  align-content: center;
   padding: 2em;
   margin: 1em;
-  display: inline-block;
+  min-height: 100%;
   cursor: pointer;
-  transition: background-color 2000ms linear;
+  transition: background-color 200ms linear;
 }
 
 .card:hover {
-  background-color: red;
-  transition: background-color 2000ms linear;
+  background-color: lightblue;
+  opacity: 0.7;
+  transition: background-color 500ms linear;
 }
 
 .card-title {
   font-family: 'Carattere', handwriting;
-  font-size: 2em;
+  font-size: 3em;
+}
+
+.home-background {
+  display: block;
+  position: absolute;
+  opacity: 0.3;
+  background-size: cover;
+  /* background-image: image-set(url('images/background-800x600.jpg') 1x); */
+  background-image: image-set(url('images/background-400x300.jpg') 1x,
+      url('images/background-640x480.jpg') 2x,
+      url('images/background-800x600.jpg') 3x,
+      url('images/background-1024x768.jpg') 4x,
+      url('images/background-2048x1536.jpg') 5x,
+      url('images/background-3000x2250.jpg') 6x,
+      url('images/background-4032x3024.jpg') 7x);
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  z-index: -100;
 }
