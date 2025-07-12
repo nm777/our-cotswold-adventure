@@ -129,3 +129,51 @@ h1 {
     background-color: var(--main-dark-bg-color);
   }
 }
+
+.prep-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prep-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.prep-nav-item {
+  margin: 0 1em;
+  cursor: pointer;
+}
+
+.prep-post {
+  margin-bottom: 4em;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transform: translateY(50px);
+  opacity: 1;
+}
+
+.prep-post.hidden {
+  transform: translateY(100px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.prep-post-title {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.prep-post-body {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.prep-post-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1em;
+}
